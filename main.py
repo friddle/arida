@@ -14,6 +14,7 @@ from pydantic import BaseModel, Field, create_model
 from fastapi import APIRouter
 from fastapi.openapi.utils import get_openapi
 import time
+import os
 import frida
 from starlette.applications import Starlette
 from fastapi import FastAPI
@@ -27,6 +28,7 @@ from utils import (
 )
 from config import *
 
+
 # 配置相关函数的参数类型列表
 function_params_hints = {
     "encryptData": [0, 0, 0, 0, "", 0, 0, 0, 0, 0, 0]
@@ -36,6 +38,8 @@ _frida_js_path1 = Path(__file__).absolute().parent/"apps/yuxueyuan.js"
 _frida_js_path = Path(__file__).absolute().parent/"apps/kuaiduizuoye.js"
 _package_name = "com.kuaiduizuoye.scan"
 _package_name1 = "com.drcuiyutao.babyhealth"
+
+os.environ["EXECJS_RUNTIME"]="Noe"
 
 # frida启动前检测
 if not detect_frida_state():

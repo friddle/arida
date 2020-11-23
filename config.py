@@ -16,10 +16,5 @@ INJECTION_APPS = [
         "name": "育学园",
         "path": "yuxueyuan",
         "package_name": "com.drcuiyutao.babyhealth"
-    },
-    {
-        "name": "快对作业",
-        "path": "kuaiduizuoye",
-        "package_name": "com.kuaiduizuoye.scan"
     }
 ]
